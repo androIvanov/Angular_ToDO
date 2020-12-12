@@ -16,5 +16,8 @@ export class TodosComponent implements OnInit {
       this.todos = data;
     });
   }
-
+  deleteHandler(todo: TodoModel){
+    this.todos.splice(this.todos.indexOf(todo), 1);
+    this.service.delete(todo).subscribe();
+  }
 }

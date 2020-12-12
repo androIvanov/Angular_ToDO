@@ -27,4 +27,9 @@ export class HttpService {
     let url = this.todosURL + '/' + todo.id;
     return this.http.put<TodoModel>(url, todo, httpOptions);
   }
+
+  delete(todo: TodoModel): Observable<TodoModel>{
+    let url = this.todosURL + '/' + todo.id;
+    return this.http.delete<TodoModel>(url , httpOptions);
+  } 
 }

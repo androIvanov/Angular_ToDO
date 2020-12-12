@@ -2,7 +2,7 @@
     <p>
         <input type="checkbox" (click)="toggleHandler(todo)" />
         {{todo.title}}
-        <button class="del" >X</button>
+        <button class="del" (click)="deleteHandler(todo)">X</button>
     </p>
 </div>
 

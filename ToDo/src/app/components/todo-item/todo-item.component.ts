@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output ,EventEmitter } from '@angular/core';
 import { TodoModel } from 'src/app/models/todo.model';
 import { HttpService } from '../../http.service';
 
@@ -9,6 +9,8 @@ import { HttpService } from '../../http.service';
 })
 export class TodoItemComponent implements OnInit {
   @Input() todo: TodoModel;
+  @Output() deleter: EventEmitter<TodoModel> = new EventEmitter();
+
 
   constructor(private service: HttpService) { }
 
@@ -28,4 +30,7 @@ export class TodoItemComponent implements OnInit {
     //Toggle on Server
     this.service.completeToggler(todo).subscribe()
   }
+  deleteHandler(todo: TodoModel){
+    this.deleter.emit(todo);
+  } 
 }
