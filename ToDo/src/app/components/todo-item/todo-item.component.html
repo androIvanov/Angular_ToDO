@@ -1,6 +1,6 @@
 <div [ngClass]="setClasses()">
     <p>
-        <input type="checkbox" (click)="this.todo.completed = !this.todo.completed" />
+        <input type="checkbox" (click)="toggleHandler(todo)" />
         {{todo.title}}
         <button class="del" >X</button>
     </p>
