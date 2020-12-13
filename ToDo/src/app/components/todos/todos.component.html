@@ -1,3 +1,5 @@
+<app-header></app-header>
+<app-add-to-do (addTodo)="addHandler($event)" ></app-add-to-do>
 <app-todo-item 
     *ngFor="let todo of todos" 
     [todo]="todo"

@@ -20,4 +20,9 @@ export class TodosComponent implements OnInit {
     this.todos.splice(this.todos.indexOf(todo), 1);
     this.service.delete(todo).subscribe();
   }
+  addHandler(data: any){
+    this.service.createTodo(data).subscribe(newData => {
+      this.todos.push(newData);
+    });
+  }
 }
